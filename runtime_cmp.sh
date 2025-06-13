@@ -23,7 +23,7 @@ echo "-----------------------------------------"
 
 for IMPL in "${IMPLEMENTATIONS[@]}"; do
   if [[ -x "./$IMPL" ]]; then
-    RUNTIME=$( (/usr/bin/time -f "%e" ./$IMPL $INPUT out_${IMPL}.png $ALPHA $OFFSET $GAMMA $ITER) 2>&1 1>/dev/null )
+    RUNTIME=$( (/usr/bin/time -f "%e" ./$IMPL $INPUT ./outputs/out_${IMPL}.png $ALPHA $OFFSET $GAMMA $ITER) 2>&1 1>/dev/null )
     printf "%-20s %-15s\n" "$IMPL" "$RUNTIME s"
   else
     printf "%-20s %-15s\n" "$IMPL" "[binary missing]"
