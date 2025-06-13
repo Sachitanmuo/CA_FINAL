@@ -2,6 +2,16 @@
 
 This repository compares different implementations of the Mantiuk algorithm for HDR (High Dynamic Range) image processing, focusing on performance optimization between CPU and CUDA-accelerated versions.
 
+## Example Results
+
+Here's a comparison between the input HDR image and the processed result:
+
+| Input HDR Image | Processed Result |
+|----------------|------------------|
+| ![Input HDR](preview/001.png) | ![Processed Result](outputs/001.png) |
+
+The processed image shows how the algorithm preserves local contrast while compressing the dynamic range to be displayable on standard monitors.
+
 ## Algorithm Overview
 
 The Mantiuk algorithm is a tone mapping operator that preserves local contrast while compressing the dynamic range of HDR images. The implementation uses the following key steps:
