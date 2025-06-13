@@ -2,7 +2,7 @@
 
 NVCC        = nvcc
 CXX         = g++
-CXXFLAGS    = -std=c++14
+CXXFLAGS    = -O3 -std=c++14
 OPENCVFLAGS = $(shell pkg-config --cflags --libs opencv4)
 
 TARGETS = mantiuk_naive mantiuk_shared mantiuk_cpu
