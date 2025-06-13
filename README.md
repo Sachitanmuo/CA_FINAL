@@ -72,9 +72,8 @@ Use the `runtime_cmp.sh` script to compare execution times of different implemen
 
 ### Output Description
 
-The script compares execution times of three implementations:
+The script compares execution times of two implementations:
 - mantiuk_cpu: CPU version
-- mantiuk_naive: Basic GPU version
 - mantiuk_shared: GPU version with shared memory
 
 Each implementation generates a corresponding output image with filename format `out_<implementation_name>.png`.
