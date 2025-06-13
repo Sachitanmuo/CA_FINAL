@@ -1,6 +1,22 @@
 # Mantiuk Algorithm Implementation Comparison
 
-This project contains multiple implementations of the Mantiuk algorithm and provides performance comparison tools.
+This repository compares different implementations of the Mantiuk algorithm for HDR (High Dynamic Range) image processing, focusing on performance optimization between CPU and CUDA-accelerated versions.
+
+## Algorithm Overview
+
+The Mantiuk algorithm is a tone mapping operator that preserves local contrast while compressing the dynamic range of HDR images. The implementation uses the following key steps:
+
+1. **Gradient Domain Processing**: The algorithm operates in the gradient domain to preserve local contrast.
+2. **Poisson Solver**: Uses Jacobi iteration method to solve the Poisson equation, which reconstructs the final image from the processed gradients.
+3. **Parameter Control**:
+   - Alpha (α): Controls the strength of contrast enhancement
+   - Offset: Prevents division by zero in gradient computation
+   - Gamma: Controls the overall brightness of the output
+
+The main computational bottleneck is the Jacobi iteration solver, which is why we implement different versions:
+- CPU version: Sequential processing
+- Naive GPU version: Basic CUDA implementation
+- Shared memory GPU version: Optimized CUDA implementation using shared memory
 
 ## System Requirements
 
@@ -33,7 +49,10 @@ Use the `runtime_cmp.sh` script to compare execution times of different implemen
 ### Parameters
 
 - `<input_image>`: Path to the input image (required)
-- `[iterations]`: Number of algorithm iterations, defaults to 500 (optional)
+- `[iterations]`: Number of Jacobi solver iterations, defaults to 500 (optional)
+  - Higher iteration count provides more accurate results but increases computation time
+  - The Jacobi solver converges gradually, so more iterations generally lead to better quality
+  - Typical values range from 100 to 1000 depending on desired quality vs. speed trade-off
 
 ### Example
 
