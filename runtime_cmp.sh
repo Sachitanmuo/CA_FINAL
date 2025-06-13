@@ -14,7 +14,6 @@ GAMMA=2.2
 
 IMPLEMENTATIONS=(
   mantiuk_cpu
-  mantiuk_naive
   mantiuk_shared
 )
 

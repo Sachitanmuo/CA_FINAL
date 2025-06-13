@@ -15,7 +15,7 @@
 #define DEF_JAC_ITERS  500
 
 #define IDX(x, y, w) ((y)*(w)+(x))
-#define BLOCK 16      // 任意 16×16 block，方便貼到 shared memory
+#define BLOCK 32     // 任意 16×16 block，方便貼到 shared memory
 
 // ---------- Kernel 區 ---------- //
 __global__ void computeLogLuminance(const float3* rgb, float* logLum,

@@ -1,0 +1,8 @@
+# Ignore object files
+*.o
+
+# Ignore compiled executables
+mantiuk_cpu
+mantiuk_naive
+mantiuk_shared
+
