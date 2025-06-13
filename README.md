@@ -8,7 +8,7 @@ Here's a comparison between the input HDR image and the processed result:
 
 | Input HDR Image | Processed Result |
 |----------------|------------------|
-| ![Input HDR](input_preview/001.png) | ![Processed Result](outputs/001.png) |
+| ![Input HDR](input_preview/001.jpg) | ![Processed Result](outputs/001.png) |
 
 The processed image shows how the algorithm preserves local contrast while compressing the dynamic range to be displayable on standard monitors.
 
